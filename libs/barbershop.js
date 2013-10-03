@@ -11,6 +11,7 @@
   */
 
   $.fn.barbershop = function() {
+    debug("initted!");
     disableSpellCheck();
     initBrowserDependentSettings();
     initContentEditables();
@@ -145,25 +146,25 @@
 
   function initStylingBar() {
     $("#bs-stylingBar a").attr("href", "javascript:void(0);");
-    $("#bs-stylingBar a.style-bold").click(function() {
+    $("#bs-stylingBar a.bs-style-bold").click(function() {
       exec('bold');
     });
-    $("#bs-stylingBar a.style-italic").click(function() {
+    $("#bs-stylingBar a.bs-style-italic").click(function() {
       exec('Italic');
     });
-    $("#bs-stylingBar a.style-underline").click(function() {
+    $("#bs-stylingBar a.bs-style-underline").click(function() {
       exec('Underline');
     });
-    $("#bs-stylingBar a.style-strikethrough").click(function() {
+    $("#bs-stylingBar a.bs-style-strikethrough").click(function() {
       exec('StrikeThrough');
     });
-    $("#bs-stylingBar a.format-h2").click(function() {
+    $("#bs-stylingBar a.bs-format-h2").click(function() {
       insertHTML('h2');
     });
-    $("#bs-stylingBar a.format-h3").click(function() {
+    $("#bs-stylingBar a.bs-format-h3").click(function() {
       insertHTML('h3');
     });
-    $("#bs-stylingBar a.format-link").click(function() {
+    $("#bs-stylingBar a.bs-format-link").click(function() {
       showLinkBox();
     });
 
