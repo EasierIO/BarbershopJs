@@ -45,7 +45,7 @@
   }
 
   function initImagePlaceholders() {
-    $(".bs-imagePlaceholder").click(function() {
+    $(".bs-image-placeholder").click(function() {
       var container = this;
       var fileInput = $('<input type="file" accept="image/*" multiple/>');
       fileInput.bind("change", function(e) {

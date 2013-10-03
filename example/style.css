@@ -45,7 +45,7 @@ h1 {
 */}
 
 #bs-right-column{
-    width: 650px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
