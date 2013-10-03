@@ -9,19 +9,69 @@
 /* entypo */
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
+  margin-right: 0.5em;
 }
 
-*,* {
+body {
+    margin: 0 300px 50px 0;
+    padding: 0;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     font-family: "Open Sans";
     outline: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
 }
 
 a {
     color: #d4145a;
+}
+
+section.admin-side-bar {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    position: fixed;
+    right: 0;
+    width: 300px;
+    bottom: 0;
+    top: 0;
+    background: hsla(0,0%,90%,1);
+    padding: 20px;
+    height: 100%;
+    border-left: 1px solid hsla(0,0%,70%,1);
+}
+.bs-element {
+    background: hsla(0,0%,88%,1);
+    border: 2px solid hsla(0,0%,86%,1);
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+section.admin-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 300px;
+    background: hsla(0,0%,95%,1);
+    border-top: 1px solid hsla(0,0%,70%,1);
+    margin: 0;
+    padding: 10px;
+}
+
+button {
+    border: 1px solid hsla(0,0%,70%,1);
+    border-radius: 3px;
+    background: hsla(0,0%,100%,0);
+    font-family: "Open Sans";
+    font-weight: 600;
+    font-size: 1em;
+    min-width: 100px;
+    text-align: left;
+    padding: 5px 10px;
+}
+button:hover {
+    background: hsla(0,0%,100%,0.7);
 }
 
 h1,h2,h3,h4,h5,h6,
@@ -38,7 +88,7 @@ h1 {
     color: #333;
 }
 
-#bs-document-container{
+#document-container{
     width: 650px;
     margin: 70px auto;
 }
@@ -46,8 +96,7 @@ h1 {
 .bs-inline-block{
     display: inline-block;
     vertical-align: top;
-/*    border: 1px solid red;
-*/}
+}
 
 #bs-right-column{
     max-width: 650px;
@@ -83,17 +132,18 @@ ul#bs-doc-actions {
 .bs-image-placeholder {
     max-width: 660px;
     min-height: 300px;
-    background-color: #eee;
     cursor: pointer;
     background-position: center;
     background-repeat: no-repeat;
-    border: 2px dashed hsla(334,85%,52%,0.2);
+    border: 2px dashed hsla(334,85%,52%,0.1);
     /*margin: -5px -5px -5px -5px;*/
     margin-top: -5px;
     margin-right: -5px;
     margin-left: -5px;
     padding: 5px;
+    padding-bottom: 0px;
     margin-bottom: 20px;
+    overflow: hidden;
 }
 
 .bs-image-placeholder:hover {
@@ -121,15 +171,13 @@ ul#bs-doc-actions {
 #bs-stylingBar {
     position: absolute;
     padding: 8px 10px;
-    background: #cb60b3; /* Old browsers */
-    background: #444444; /* Old browsers */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
-    border-radius: 4px;
+    background: hsla(334,85%,52%,0.9); /* Old browsers */
+    border-radius: 2px;
     color: #fff;
     z-index: 99;
-    height: 40px;
+    height: 25px;
     display: none;
-    width: 272px;
+    width: 262px;
     overflow:hidden;
 }
 
@@ -138,22 +186,6 @@ ul#bs-doc-actions {
     float: left;
     margin-left:10;
     width: 700px;
-}
-
-#bs-stylingBar:before {
-display: block;
-width: 20px;
-height: 20px;
-content: " ";
-margin-left: 5px;
-margin-top: 20px;
-position: absolute;
-z-index: 10;
--webkit-transform: rotate(45deg) scale(0.5);
--moz-transform: rotate(45deg) scale(0.5);
--o-transform: rotate(45deg) scale(0.5);
-transform: rotate(45deg) scale(0.5);
-background-color: #222;
 }
 
 #bs-stylingBar a {

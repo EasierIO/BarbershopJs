@@ -223,9 +223,7 @@
           $(container).append($(img));
           numProcessed++;
           if (numProcessed == n) {
-            $(container).animate({
-              height: img.height()
-            }, 300);
+            
           }
         });
       });
