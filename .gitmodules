@@ -1,0 +1,3 @@
+[submodule "jquery.odysseus.js"]
+	path = jquery.odysseus.js
+	url = https://woutervroege@github.com/woutervroege/jquery.odysseus.js
