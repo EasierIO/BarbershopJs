@@ -1,4 +1,11 @@
-* {
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+*,* {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     font-family: "Vollkorn";
@@ -204,3 +211,4 @@ font-size: 15px;
 .bs-imagePlaceholder img, .imagePlaceholder img {
     width: 100%;
 }
+
