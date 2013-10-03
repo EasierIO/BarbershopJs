@@ -143,7 +143,7 @@ ul#bs-doc-actions {
    color: #d4145a;
 }
 
-.bs-image-placeholder {
+.ody-image-placeholder {
     max-width: 660px;
     min-height: 300px;
     cursor: pointer;
@@ -161,7 +161,7 @@ ul#bs-doc-actions {
     position: relative;
 }
 
-.bs-image-placeholder:after {
+.ody-image-placeholder:after {
     font-size: 20px;
     position: absolute;
     right: 10px;
@@ -174,21 +174,21 @@ ul#bs-doc-actions {
     color: white;
 }
 
-.bs-image-placeholder:hover {
+.ody-image-placeholder:hover {
     box-shadow: inset 0 0 4px #aaa;
     border: 2px dashed hsla(334,85%,52%,0.5);
 }
 
-.bs-image-placeholder:active {
+.ody-image-placeholder:active {
     box-shadow: inset 0 0 4px #555;
     border: 2px dashed hsla(334,85%,52%,1);
 }
 
-.bs-image-placeholder img {
+.ody-image-placeholder img {
     width: 100%;
 }
 
-.bs-image-placeholderSmall {
+.ody-image-placeholderSmall {
     width: 150px;
     height: 150px;
     min-height: 150px;
