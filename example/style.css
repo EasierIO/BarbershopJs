@@ -52,6 +52,9 @@ section.admin-side-bar {
     cursor: move;
     cursor: -webkit-grab;
     cursor: -moz-grab;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
 }
 .bs-element:hover {
     border: 2px dashed hsla(334,85%,52%,0.5);
