@@ -18,6 +18,20 @@
       axis: "y",
       cursor: "move"
     });
+    $(that).droppable({});
+
+    $(".bs-element").draggable({
+        stop: function(e) {
+          $(e.target)
+          .css({
+            left: "auto",
+            top: "auto"
+          })
+          var newItem = $('<article data-uuid="'+uuid()+'" class="bs-doc-textarea" contenteditable="true" spellcheck="false" class="bs-input-field" data-placeholder="Running text with paragraphs and styles.">');
+          $(that).append($(newItem));
+          $(newItem).focus();
+        }
+    });
 
     $(that).find("[contenteditable]").on("mouseover", function() {
       $(this).css({
@@ -54,6 +68,7 @@
       console.log("active element = #" + $(document.activeElement).attr("id"));
     });
   };
+
 
   var uuid = function(separator) {
     var delim = separator || "-";
