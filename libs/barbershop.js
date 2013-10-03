@@ -223,7 +223,7 @@
           numProcessed++;
           if (numProcessed == n) {
             $(container).animate({
-              height: img.height()
+              height: img.height() + 15
             }, 300);
           }
         });
