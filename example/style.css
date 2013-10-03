@@ -55,9 +55,11 @@ section.admin-side-bar {
 }
 .bs-element:hover {
     border: 2px dashed hsla(334,85%,52%,0.5);
+    outline: none;
 }
 .bs-element:active {
     border: 2px dashed hsla(334,85%,52%,1);
+    outline: none;
 }
 
 section.admin-bottom-bar {
@@ -234,6 +236,7 @@ ul#bs-doc-actions {
     margin-right: -5px;
     margin-left: -5px;
     padding: 5px;
+    outline: none;
 }
 
 [contenteditable].empty {
@@ -247,10 +250,12 @@ ul#bs-doc-actions {
 
 [contenteditable]:hover {
     border: 2px dashed hsla(334,85%,52%,0.5);
+    outline: none;
 }
 
 [contenteditable]:focus {
     border: 2px dashed hsla(334,85%,52%,1);
+    outline: none;
 }
 
 input#bs-selection-link {
