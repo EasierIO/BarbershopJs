@@ -1,4 +1,5 @@
 @import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600);
 
 /* entypo */
 [class*="entypo-"]:before {
@@ -8,7 +9,7 @@
 *,* {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    font-family: "Source Sans Pro";
+    font-family: "Open Sans";
     outline: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -21,7 +22,7 @@ a {
 h1,h2,h3,h4,h5,h6,
 h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
     font-family: "Open Sans";
-    font-weight: 800;
+    font-weight: 600;
     margin: 0 0 10px 0;
     line-height: 1.2;
     font-style: normal;
