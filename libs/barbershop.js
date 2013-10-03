@@ -21,7 +21,7 @@
 
     $(that).find("[contenteditable]").on("mouseover", function() {
       $(this).css({
-        cursor: ($(document.activeElement).attr("id") === $(this).attr("id")) ? "text" : "move"
+        cursor: ($(document.activeElement).data("uuid") === $(this).data("uuid")) ? "text" : "move"
       });
     });
 
