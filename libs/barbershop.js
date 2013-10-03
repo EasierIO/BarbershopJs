@@ -22,11 +22,11 @@
 
   function initWindow() {
     $(window).mouseup(function(e) {
-      if ($(e.target).parents().is("#stylingBar"))
+      if ($(e.target).parents().is("#bs-stylingBar"))
         return;
 
       if (!(getSelectionLength() > 0 && document.activeElement.isContentEditable && elementIsStyleable(document.activeElement)))
-        return $("#stylingBar").hide();
+        return $("#bs-stylingBar").hide();
 
       showStylingBar();
     });
@@ -44,12 +44,12 @@
   }
 
   function initImagePlaceholders() {
-    $(".imagePlaceholder").click(function() {
+    $(".bs-imagePlaceholder").click(function() {
       var container = this;
       var fileInput = $('<input type="file" accept="image/*" multiple/>');
       fileInput.bind("change", function(e) {
         $(self).css({
-          "background-image": "url(images/ajax-loader.gif)"
+          "bs-background-image": "url(images/ajax-loader.gif)"
         });
         processImages(e.target.files, container);
       });
@@ -128,42 +128,42 @@
 
   function createStylingBar() {
     $("body").append($(
-      '<div id="stylingBar">' +
-      '<div id="stylingBar-inner">' +
-      '<a class="style style-bold"><b>B</b></a>' +
-      '<a class="style style-italic"><i>I</i></a>' +
-      '<a class="style style-underline"><u>U</u></a>' +
-      '<a class="style style-strikethrough"><s>S</s></a>' +
-      '<a class="format format-h2">H2</a>' +
-      '<a class="format format-h3">H3</a>' +
-      '<a class="format format-link"><img src="images/link.png"></a>' +
-      '<input type="text" id="selection-link" placeholder="type in a link"/>' +
+      '<div id="bs-stylingBar">' +
+      '<div id="bs-stylingBar-inner">' +
+      '<a class="bs-style bs-style-bold"><b>B</b></a>' +
+      '<a class="bs-style bs-style-italic"><i>I</i></a>' +
+      '<a class="bs-style bs-style-underline"><u>U</u></a>' +
+      '<a class="bs-style bs-style-strikethrough"><s>S</s></a>' +
+      '<a class="bs-format bs-format-h2">H2</a>' +
+      '<a class="bs-format bs-format-h3">H3</a>' +
+      '<a class="bs-format bs-format-link"><img src="images/link.png"></a>' +
+      '<input type="text" id="bs-selection-link" placeholder="type in a link"/>' +
       '</div>' +
       '</div>'
     ));
   }
 
   function initStylingBar() {
-    $("#stylingBar a").attr("href", "javascript:void(0);");
-    $("#stylingBar a.style-bold").click(function() {
+    $("#bs-stylingBar a").attr("href", "javascript:void(0);");
+    $("#bs-stylingBar a.style-bold").click(function() {
       exec('bold');
     });
-    $("#stylingBar a.style-italic").click(function() {
+    $("#bs-stylingBar a.style-italic").click(function() {
       exec('Italic');
     });
-    $("#stylingBar a.style-underline").click(function() {
+    $("#bs-stylingBar a.style-underline").click(function() {
       exec('Underline');
     });
-    $("#stylingBar a.style-strikethrough").click(function() {
+    $("#bs-stylingBar a.style-strikethrough").click(function() {
       exec('StrikeThrough');
     });
-    $("#stylingBar a.format-h2").click(function() {
+    $("#bs-stylingBar a.format-h2").click(function() {
       insertHTML('h2');
     });
-    $("#stylingBar a.format-h3").click(function() {
+    $("#bs-stylingBar a.format-h3").click(function() {
       insertHTML('h3');
     });
-    $("#stylingBar a.format-link").click(function() {
+    $("#bs-stylingBar a.format-link").click(function() {
       showLinkBox();
     });
 
@@ -172,13 +172,13 @@
         var sel = window.getSelection();
         sel.removeAllRanges();
         sel.addRange(activeRange);
-        $("#stylingBar").stop().animate({
+        $("#bs-stylingBar").stop().animate({
           scrollLeft: 0,
         }, 100, function() {
-          if ($("input#selection-link").val().length === 0)
+          if ($("input#bs-selection-link").val().length === 0)
             return document.execCommand('insertHTML', false, '<span>' + sel + '</span>');
-          document.execCommand('insertHTML', false, "<a href='" + $("input#selection-link").val() + "' target='_blank'>" + sel + "</a>");
-          $("input#selection-link").val("");
+          document.execCommand('insertHTML', false, "<a href='" + $("input#bs-selection-link").val() + "' target='_blank'>" + sel + "</a>");
+          $("input#bs-selection-link").val("");
         });
       }
     });
@@ -187,7 +187,7 @@
   function showStylingBar() {
     var range = getSelectionRange();
     var stylingBarPosition = getStylingBarPosition(range);
-    $("#stylingBar")
+    $("#bs-stylingBar")
       .css({
         top: stylingBarPosition.top,
         left: stylingBarPosition.left,
@@ -200,15 +200,15 @@
   }
 
   function showLinkBox() {
-    $("#stylingBar")
+    $("#bs-stylingBar")
       .stop()
       .animate({
         scrollLeft: 202
       }, 300);
-    $("#stylingBar-inner input").trigger("focus");
+    $("#bs-stylingBar-inner input").trigger("focus");
     if (activeRange.startContainer.parentElement.href)
-      return $("input#selection-link").val(activeRange.startContainer.parentElement.href)
-    $("input#selection-link").val("")
+      return $("input#bs-selection-link").val(activeRange.startContainer.parentElement.href)
+    $("input#bs-selection-link").val("")
   }
 
   function processImages(images, container) {
