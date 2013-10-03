@@ -198,26 +198,29 @@ ul#bs-doc-actions {
     margin-bottom: 10px;
 }
 
-#bs-stylingBar {
+#ody-stylingBar {
     position: absolute;
     padding: 8px 10px;
     background: hsla(334,85%,52%,0.9); /* Old browsers */
     border-radius: 2px;
     color: #fff;
     z-index: 99;
-    height: 25px;
+    height: 40px;
     display: none;
     overflow:hidden;
 }
+#ody-stylingBar:after {
+    display: none;
+}
 
-#bs-stylingBar-inner {
+#ody-stylingBar-inner {
     position: absolute;
     float: left;
     margin-left:10;
     width: 700px;
 }
 
-#bs-stylingBar a {
+#ody-stylingBar a {
     color: #fff;
     text-decoration: none;
     padding: 0 10px;
@@ -225,7 +228,7 @@ ul#bs-doc-actions {
     height:16px;
 }
 
-#bs-stylingBar a:hover {
+#ody-stylingBar a:hover {
     color: #dddddd;
 }
 
