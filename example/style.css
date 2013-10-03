@@ -1,5 +1,7 @@
-@import url(http://weloveiconfonts.com/api/?family=entypo);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600);
+/*
+    Active color: hsla(334,85%,52%,1);
+
+*/
 
 /* entypo */
 [class*="entypo-"]:before {
@@ -23,7 +25,7 @@ h1,h2,h3,h4,h5,h6,
 h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
     font-family: "Open Sans";
     font-weight: 600;
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
     line-height: 1.2;
     font-style: normal;
 }
@@ -86,19 +88,19 @@ ul#bs-doc-actions {
     background-repeat: no-repeat;
 }
 
-.bs-imagePlaceholder:hover {
+.bs-image-placeholder:hover {
     box-shadow: inset 0 0 4px #aaa;
 }
 
-.bs-imagePlaceholder:active {
+.bs-image-placeholder:active {
     box-shadow: inset 0 0 4px #555;
 }
 
-.bs-imagePlaceholder img {
+.bs-image-placeholder img {
     width: 100%;
 }
 
-.bs-imagePlaceholderSmall {
+.bs-image-placeholderSmall {
     width: 150px;
     height: 150px;
     min-height: 150px;
@@ -163,7 +165,12 @@ background-color: #222;
 }
 
 [contenteditable] {
-    border: 1px solid transparent;
+    border: 2px dashed hsla(334,85%,52%,0.2);
+    /*margin: -5px -5px -5px -5px;*/
+    margin-top: -5px;
+    margin-right: -5px;
+    margin-left: -5px;
+    padding: 5px;
 }
 
 [contenteditable].empty {
@@ -176,8 +183,8 @@ background-color: #222;
 }
 
 [contenteditable]:focus {
-/*    border-color: #d4145a;
-*/}
+    border: 2px dashed hsla(334,85%,52%,1);
+}
 
 input#bs-selection-link {
 width:190px;
@@ -200,15 +207,17 @@ font-size: 15px;
     background-repeat: no-repeat;
 }
 
-.bs-imagePlaceholder:hover {
+.bs-image-placeholder:hover {
     box-shadow: inset 0 0 4px #aaa;
 }
 
-.bs-imagePlaceholder:active {
+.bs-image-placeholder:active {
     box-shadow: inset 0 0 4px #555;
 }
 
-.bs-imagePlaceholder img {
+.bs-image-placeholder img {
     width: 100%;
 }
 
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600);
