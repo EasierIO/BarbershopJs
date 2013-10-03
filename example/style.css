@@ -1,6 +1,9 @@
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600);
+
 /*
     Active color: hsla(334,85%,52%,1);
-
 */
 
 /* entypo */
@@ -218,6 +221,3 @@ font-size: 15px;
 .bs-image-placeholder img {
     width: 100%;
 }
-
-@import url(http://weloveiconfonts.com/api/?family=entypo);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600);
