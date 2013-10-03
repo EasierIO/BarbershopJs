@@ -8,12 +8,14 @@
 	<script src="../libs/handlebars.js"></script>
 	<script src="../libs/jquery.htmlClean.min.js"></script>
   <script src="../libs/barbershop.js"></script>
+  <script src="../libs/odysseus.js"></script>
   <script src="../libs/jquery-ui-1.10.3.custom.min.js"></script>
 	<meta name="viewport" content="width=device-width">
 
     <script>
     $(document).ready(function() {
-      $().barbershop();
+      $("#bs-right-column").barbershop();
+      $().odysseus();
       $('.pre-loading').fadeOut('fast');
     });
     </script>
@@ -84,7 +86,7 @@
 
   <div class="pre-loading">
     <br>Loading...<br>
-    <div class="spinner"> 
+    <div class="spinner">
     </div>
   </div>
 

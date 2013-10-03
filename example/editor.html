@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BarbershopJs Record</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../libs/jquery-2.0.3.min.js"></script>
+    <script src="../libs/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="../libs/handlebars.js"></script>
+    <script src="../libs/jquery.htmlClean.min.js"></script>
+    <script src="../libs/barbershop.js"></script>
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+    :active {
+      border: 1px solid blue;
+    }
+    </style>
+
+    <script>
+    $(document).ready(function() {
+
+
+
+      $().barbershop();
+      $("#document-container").sortable({ axis: "y", cursor: "move" });
+
+      $("[contenteditable]").on("mouseover", function() {
+          $(this).css({
+            cursor: ($(document.activeElement).attr("id") === $(this).attr("id")) ? "text" : "move"
+          });
+      });
+
+      $("[contenteditable]").on("mousedown", function() {
+        if($(document.activeElement).attr("id") === $(this).attr("id")) {
+          console.log("active element  = mousedown element");
+          $("#document-container").sortable("sort");
+          $("#document-container").sortable("destroy");
+        }
+        else {
+          $("#document-container").sortable({ axis: "y", cursor: "move" });
+          console.log("active element  != mousedown element");
+          console.log("active element = #" + $(document.activeElement).attr("id"));
+        }
+      });
+
+      $("[contenteditable]").mouseup(function() {
+        $("#document-container").sortable("sort");
+        $("#document-container").sortable("destroy");
+      });
+
+      $("[contenteditable]").click(function() {
+        $(this).trigger("focus");
+          $(this).css({
+            cursor: "text"
+          });
+        $("#document-container").sortable("destroy");
+        console.log("active element = #" + $(document.activeElement).attr("id"));
+      });
+
+    });
+    </script>
+</head>
+<body>
+
+    <div id="document-container" style="border: 1px solid red;min-height:500px;">
+      <h1 id="bs-title" contenteditable="plaintext-only" data-placeholder="Document title"></h1>
+      <div id="bs-bodytext" contenteditable="true" data-placeholder="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit."></div>
+    </div>
+
+</body>
+</html>
