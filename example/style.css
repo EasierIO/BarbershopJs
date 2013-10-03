@@ -8,7 +8,7 @@
 *,* {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    font-family: "Vollkorn";
+    font-family: "Source Sans Pro";
     outline: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -32,18 +32,18 @@ h1 {
     color: #333;
 }
 
-#bs-document-container, #document-container {
+#bs-document-container{
     width: 650px;
     margin: 70px auto;
 }
 
-.bs-inline-block, .inline-block {
+.bs-inline-block{
     display: inline-block;
     vertical-align: top;
 /*    border: 1px solid red;
 */}
 
-#bs-right-column, #right-column {
+#bs-right-column{
     width: 650px;
     margin: 0 auto;
 }
@@ -59,7 +59,7 @@ article b, article strong {
     font-weight: 700;
 }
 
-ul#bs-doc-actions, ul#doc-actions {
+ul#bs-doc-actions {
     list-style: none;
     margin:0;
     padding: 0;
@@ -70,35 +70,34 @@ ul#bs-doc-actions, ul#doc-actions {
     cursor: pointer;
 }
 
- ul#bs-doc-actions li:hover, ul#doc-actions li:hover {
+ ul#bs-doc-actions li:hover {
    color: #d4145a;
 }
 
-.bs-imagePlaceholder, .imagePlaceholder {
+.bs-image-placeholder {
     width: 650px;
     min-height: 300px;
     background-color: #eee;
     margin-bottom: 20px;
-/*    overflow-y:hidden;
-*/    cursor: pointer;
+    cursor: pointer;
     background-position: center;
     border: 1px solid #ddd;
     background-repeat: no-repeat;
 }
 
-.bs-imagePlaceholder:hover, .imagePlaceholder:hover {
+.bs-imagePlaceholder:hover {
     box-shadow: inset 0 0 4px #aaa;
 }
 
-.bs-imagePlaceholder:active, .imagePlaceholder:active {
+.bs-imagePlaceholder:active {
     box-shadow: inset 0 0 4px #555;
 }
 
-.bs-imagePlaceholder img, .imagePlaceholder img {
+.bs-imagePlaceholder img {
     width: 100%;
 }
 
-.bs-imagePlaceholderSmall, .imagePlaceholderSmall {
+.bs-imagePlaceholderSmall {
     width: 150px;
     height: 150px;
     min-height: 150px;
@@ -106,7 +105,7 @@ ul#bs-doc-actions, ul#doc-actions {
     margin-bottom: 10px;
 }
 
-#bs-stylingBar, #stylingBar {
+#bs-stylingBar {
     position: absolute;
     padding: 8px 10px;
     background: #cb60b3; /* Old browsers */
@@ -127,14 +126,14 @@ ul#bs-doc-actions, ul#doc-actions {
     overflow:hidden;
 }
 
-#bs-stylingBar-inner, #stylingBar-inner {
+#bs-stylingBar-inner {
     position: absolute;
     float: left;
     margin-left:10;
     width: 700px;
 }
 
-#bs-stylingBar:before, #stylingBar:before {
+#bs-stylingBar:before {
 display: block;
 width: 20px;
 height: 20px;
@@ -150,7 +149,7 @@ transform: rotate(45deg) scale(0.5);
 background-color: #222;
 }
 
-#bs-stylingBar a, #stylingBar a {
+#bs-stylingBar a {
     color: #fff;
     text-decoration: none;
     padding: 0 10px;
@@ -158,7 +157,7 @@ background-color: #222;
     height:16px;
 }
 
-#bs-stylingBar a:hover, #stylingBar a:hover {
+#bs-stylingBar a:hover {
     color: #dddddd;
 }
 
@@ -179,7 +178,7 @@ background-color: #222;
 /*    border-color: #d4145a;
 */}
 
-input#bs-selection-link, input#selection-link {
+input#bs-selection-link {
 width:190px;
 color:#fff;
 outline:none;
@@ -200,15 +199,15 @@ font-size: 15px;
     background-repeat: no-repeat;
 }
 
-.bs-imagePlaceholder:hover, .imagePlaceholder:hover {
+.bs-imagePlaceholder:hover {
     box-shadow: inset 0 0 4px #aaa;
 }
 
-.bs-imagePlaceholder:active, .imagePlaceholder:active {
+.bs-imagePlaceholder:active {
     box-shadow: inset 0 0 4px #555;
 }
 
-.bs-imagePlaceholder img, .imagePlaceholder img {
+.bs-imagePlaceholder img {
     width: 100%;
 }
 
