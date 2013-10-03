@@ -1,6 +1,6 @@
 
 @import url(http://weloveiconfonts.com/api/?family=entypo);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic|Bitter:400,700,400italic);
 
 /*
     Active color: hsla(334,85%,52%,1);
@@ -13,11 +13,11 @@
 }
 
 body {
-    margin: 0 300px 50px 0;
+    margin: 0 300px 40px 0;
     padding: 0;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    font-family: "Open Sans";
+    font-family: "Bitter";
     outline: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -29,6 +29,7 @@ a {
 }
 
 section.admin-side-bar {
+    font-family: "Source Sans Pro";
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     position: fixed;
@@ -42,13 +43,25 @@ section.admin-side-bar {
     border-left: 1px solid hsla(0,0%,70%,1);
 }
 .bs-element {
+    font-family: "Bitter";
     background: hsla(0,0%,88%,1);
-    border: 2px solid hsla(0,0%,86%,1);
     margin-bottom: 20px;
     padding: 10px;
+    font-size: 22px;
+    border: 2px dashed hsla(334,85%,52%,0.1);
+    cursor: move;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+.bs-element:hover {
+    border: 2px dashed hsla(334,85%,52%,0.5);
+}
+.bs-element:active {
+    border: 2px dashed hsla(334,85%,52%,1);
 }
 
 section.admin-bottom-bar {
+    font-family: "Source Sans Pro";
     position: fixed;
     bottom: 0;
     left: 0;
@@ -57,13 +70,14 @@ section.admin-bottom-bar {
     border-top: 1px solid hsla(0,0%,70%,1);
     margin: 0;
     padding: 10px;
+    height: 40px;
 }
 
 button {
     border: 1px solid hsla(0,0%,70%,1);
     border-radius: 3px;
     background: hsla(0,0%,100%,0);
-    font-family: "Open Sans";
+    font-family: "Source Sans Pro";
     font-weight: 600;
     font-size: 1em;
     min-width: 100px;
@@ -76,8 +90,8 @@ button:hover {
 
 h1,h2,h3,h4,h5,h6,
 h1 *,h2 *,h3 *,h4 *,h5 *,h6 * {
-    font-family: "Open Sans";
-    font-weight: 600;
+    font-family: "Bitter";
+    font-weight: 700;
     margin: 0 0 20px 0;
     line-height: 1.2;
     font-style: normal;
@@ -144,6 +158,20 @@ ul#bs-doc-actions {
     padding-bottom: 0px;
     margin-bottom: 20px;
     overflow: hidden;
+    position: relative;
+}
+
+.bs-image-placeholder:after {
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 5px;
+    background: hsla(334,85%,52%,1);
+    border-radius: 20px;
+    font-family: 'entypo', sans-serif;
+    content:"\1f304";
+    color: white;
 }
 
 .bs-image-placeholder:hover {
@@ -177,7 +205,6 @@ ul#bs-doc-actions {
     z-index: 99;
     height: 25px;
     display: none;
-    width: 262px;
     overflow:hidden;
 }
 
@@ -201,7 +228,7 @@ ul#bs-doc-actions {
 }
 
 [contenteditable] {
-    border: 2px dashed hsla(334,85%,52%,0.2);
+    border: 2px dashed hsla(334,85%,52%,0.1);
     /*margin: -5px -5px -5px -5px;*/
     margin-top: -5px;
     margin-right: -5px;
