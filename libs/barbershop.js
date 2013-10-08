@@ -18,6 +18,22 @@
       });
     }
 
+    var initDraggable = function() {
+      $(".bs-element").draggable({
+        start: function() {
+          initOverlay();
+        },
+        stop: function(e) {
+          $(e.target)
+            .css({
+              left: "auto",
+              top: "auto"
+            })
+
+        }
+      });
+    }
+
 
     $(that).find("[contenteditable]").each(function() {
       $(this).attr("data-uuid", uuid());
@@ -33,21 +49,8 @@
       .append('<div id="bs-editor-overlay" style="position: absolute!important;top:0;left:0;width: 100%;height: 100%;background: transparent;z-index:-1"></div>');
 
     initSortable();
+    initDraggable();
     $(that).droppable({});
-
-    $(".bs-element").draggable({
-      start: function() {
-        initOverlay();
-      },
-      stop: function(e) {
-        $(e.target)
-          .css({
-            left: "auto",
-            top: "auto"
-          })
-
-      }
-    });
 
     $("body").on("mouseover", $(that).find("[contenteditable]"), function() {
       $(this).css({
@@ -86,11 +89,13 @@
     var initOverlay = function() {
       $("#bs-editor-overlay").droppable({
         over: function(event, ui) {
-          $("#bs-editor-overlay")
-            .css({
-              background: "hsla(334,85%,52%,.2)",
-              "z-index": 8
-            })
+          if ($(ui.draggable[0]).hasClass("bs-element")) {
+            $("#bs-editor-overlay")
+              .css({
+                background: "hsla(334,85%,52%,.2)",
+                "z-index": 8
+              })
+          }
         },
         out: function(event, ui) {
           $("#bs-editor-overlay")
@@ -105,15 +110,17 @@
               background: "transparent",
               "z-index": -1
             })
-          $(ui.draggable[0])
-            .css({
-              left: "auto",
-              top: "auto"
-            })
-          var newItem = $('<article data-uuid="' + uuid() + '" class="bs-doc-textarea" contenteditable="true" spellcheck="false" class="bs-input-field" data-placeholder="Running text with paragraphs and styles.">');
-          $(that).append($(newItem));
-          $(newItem).focus();
-          initSortable();
+          if ($(ui.draggable[0]).hasClass("bs-element")) {
+            $(ui.draggable[0])
+              .css({
+                left: "auto",
+                top: "auto"
+              })
+            var newItem = $('<article data-uuid="' + uuid() + '" class="bs-doc-textarea" contenteditable="true" spellcheck="false" class="bs-input-field" data-placeholder="Running text with paragraphs and styles.">');
+            $(that).append($(newItem));
+            $(newItem).focus();
+            initSortable();
+          }
         }
       });
 
