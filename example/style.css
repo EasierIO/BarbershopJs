@@ -236,6 +236,11 @@ ul#bs-doc-actions {
     color: #dddddd;
 }
 
+#ody-format-link {
+    font-family: 'entypo', sans-serif;
+    content:"\1f517"
+}
+
 [contenteditable] {
     border: 2px dashed hsla(334,85%,52%,0.1);
     /*margin: -5px -5px -5px -5px;*/
