@@ -110,13 +110,26 @@
               background: "transparent",
               "z-index": -1
             })
-          if ($(ui.draggable[0]).hasClass("bs-element")) {
+
+          var draggingElement = $(ui.draggable[0]);
+          var newItem;
+
+          if($(draggingElement).hasClass("bs-element")) {
             $(ui.draggable[0])
               .css({
                 left: "auto",
                 top: "auto"
               })
-            var newItem = $('<article data-uuid="' + uuid() + '" class="bs-doc-textarea" contenteditable="true" spellcheck="false" class="bs-input-field" data-placeholder="Running text with paragraphs and styles.">');
+
+            if($(draggingElement).hasClass("bs-image")) {
+              newItem = getNewImagePlaceholderElement();
+            }
+            else if($(draggingElement).hasClass("bs-text")) {
+              newItem = getNewPlainTextElement();
+            }
+            else {
+              newItem = getNewRunningTextElement();
+            }
             $(that).append($(newItem));
             $(newItem).focus();
             initSortable();
@@ -133,6 +146,18 @@
     $("#button-getJSON").click(function() {
       alert(JSON.stringify(getJSONValues()));
     });
+
+    var getNewRunningTextElement = function() {
+      return $('<article data-uuid="' + uuid() + '" class="bs-doc-textarea" contenteditable="true" spellcheck="false" class="bs-input-field" data-placeholder="Running text with paragraphs and styles.">');
+    }
+
+    var getNewPlainTextElement = function() {
+      return $('<h3 data-uuid="' + uuid() + '" class="bs-doc-textarea" contenteditable="plaintext-only" spellcheck="false" class="bs-input-field" data-placeholder="Plain text">');
+    }
+
+    var getNewImagePlaceholderElement = function() {
+      return $('<div class="ody-image-placeholder"></div>');
+    }
 
     var getJSONValues = function() {
       var jsonData = {};
