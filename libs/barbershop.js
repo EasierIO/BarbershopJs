@@ -21,19 +21,23 @@
     $(that).droppable({});
 
     $(".bs-element").draggable({
-        stop: function(e) {
-          $(e.target)
+      stop: function(e) {
+        $(e.target)
           .css({
             left: "auto",
             top: "auto"
           })
-          var newItem = $('<article data-uuid="'+uuid()+'" class="bs-doc-textarea" contenteditable="true" spellcheck="false" class="bs-input-field" data-placeholder="Running text with paragraphs and styles.">');
-          $(that).append($(newItem));
-          $(newItem).focus();
-        }
+        var newItem = $('<article data-uuid="' + uuid() + '" class="bs-doc-textarea" contenteditable="true" spellcheck="false" class="bs-input-field" data-placeholder="Running text with paragraphs and styles.">');
+        $(that).append($(newItem));
+        $(newItem).focus();
+        $(that).sortable({
+          axis: "y",
+          cursor: "move"
+        });
+      }
     });
 
-    $(that).find("[contenteditable]").on("mouseover", function() {
+    $("body").on("mouseover", $(that).find("[contenteditable]"), function() {
       $(this).css({
         cursor: ($(document.activeElement).data("uuid") === $(this).data("uuid")) ? "text" : "move"
       });
@@ -72,6 +76,7 @@
 
   var uuid = function(separator) {
     var delim = separator || "-";
+
     function S4() {
       return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
     }

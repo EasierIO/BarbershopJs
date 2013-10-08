@@ -85,9 +85,10 @@ button {
     font-family: "Source Sans Pro";
     font-weight: 600;
     font-size: 1em;
-    min-width: 100px;
-    text-align: left;
-    padding: 5px 10px;
+/*    min-width: 100px;
+*/    text-align: left;
+    padding: 5px 12px;
+    cursor: pointer;
 }
 button:hover {
     background: hsla(0,0%,100%,0.7);
