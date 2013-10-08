@@ -21,7 +21,7 @@ body {
     outline: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 a {
@@ -30,6 +30,19 @@ a {
 
 p:first-child {
     margin-top: 0;
+}
+section.admin-top-bar {
+  position: fixed;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: hsla(0,0%,20%,1);
+  color: white;
+  padding: 11px;
+  z-index: 100;
 }
 
 section.admin-side-bar {
@@ -40,7 +53,7 @@ section.admin-side-bar {
     right: 0;
     width: 300px;
     bottom: 0;
-    top: 0;
+    top: 40px;
     background: hsla(0,0%,90%,1);
     padding: 20px;
     height: 100%;
@@ -48,7 +61,7 @@ section.admin-side-bar {
 }
 .bs-element {
     font-family: "Bitter";
-    background: hsla(0,0%,88%,1);
+    background: hsla(0,0%,95%,1);
     margin-bottom: 20px;
     padding: 10px;
     font-size: 22px;
@@ -70,6 +83,7 @@ section.admin-side-bar {
 }
 
 section.admin-bottom-bar {
+    z-index: 100;
     font-family: "Source Sans Pro";
     position: fixed;
     bottom: 0;
@@ -80,23 +94,40 @@ section.admin-bottom-bar {
     margin: 0;
     padding: 10px;
     height: 40px;
-    z-index: 9;
 }
 
 button {
-    border: 1px solid hsla(0,0%,70%,1);
-    border-radius: 3px;
-    background: hsla(0,0%,100%,0);
-    font-family: "Source Sans Pro";
-    font-weight: 600;
-    font-size: 1em;
-/*    min-width: 100px;
-*/    text-align: left;
-    padding: 5px 12px;
-    cursor: pointer;
-}
+      display: inline;
+      border: 1px solid hsla(0,0%,70%,1);
+      border-radius: 3px;
+      background: hsla(0,0%,100%,0);
+      font-family: "Source Sans Pro";
+      font-weight: 400;
+      font-size: 1em;
+      min-width: 100px;
+      text-align: left;
+      padding: 7px 20px 7px 10px;
+    }
 button:hover {
-    background: hsla(0,0%,100%,0.7);
+  background: hsla(0,0%,100%,0.7);
+  outline: none;
+}
+
+button.bs-edit {
+    float: left;
+}
+#button-getJSON, #button-getHandleBarsTemplate {
+    float: right;
+}
+#button-getJSON:before {
+  font-family: 'entypo';
+  content: "\1F4C4";
+  margin-right: 0.5em;
+}
+#button-getHandleBarsTemplate:before {
+  font-family: 'entypo';
+  content: "\E714";
+  margin-right: 0.5em;
 }
 
 h1,h2,h3,h4,h5,h6,
@@ -240,11 +271,6 @@ ul#bs-doc-actions {
 
 #ody-stylingBar a:hover {
     color: #dddddd;
-}
-
-#ody-format-link {
-    font-family: 'entypo', sans-serif;
-    content:"\1f517"
 }
 
 [contenteditable] {
