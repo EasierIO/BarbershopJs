@@ -31,6 +31,15 @@ a {
 p:first-child {
     margin-top: 0;
 }
+
+#bs-element-metabox {
+    background: hsla(334,85%,52%,1);
+    color:#fff;
+    padding: 2px 5px;
+    position: absolute;
+    z-index: 999;
+}
+
 section.admin-top-bar {
   position: fixed;
   box-sizing: border-box;
@@ -284,11 +293,6 @@ ul#bs-doc-actions {
 }
 
 [contenteditable].empty {
-    color: #ccc;
-}
-
-[contenteditable]:empty:after {
-    content: attr(data-placeholder);
     color: #ccc;
 }
 

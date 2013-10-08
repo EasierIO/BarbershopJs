@@ -52,7 +52,7 @@
     initDraggable();
     $(that).droppable({});
 
-    $("body").on("mouseover", $(that).find("[contenteditable]"), function() {
+    $("body").on("mouseover", "[contenteditable]", function() {
       $(this).css({
         cursor: ($(document.activeElement).data("uuid") === $(this).data("uuid")) ? "text" : "move"
       });
@@ -84,7 +84,13 @@
       });
       $(that).sortable("destroy");
       console.log("active element = #" + $(document.activeElement).attr("id"));
-    });
+    })
+    .on("mouseover", function() {
+      showMetaBox(this);
+    })
+    .on("mouseout", function() {
+      hideMetaBox(this);
+    })
 
     var initOverlay = function() {
       $("#bs-editor-overlay").droppable({
@@ -114,20 +120,18 @@
           var draggingElement = $(ui.draggable[0]);
           var newItem;
 
-          if($(draggingElement).hasClass("bs-element")) {
+          if ($(draggingElement).hasClass("bs-element")) {
             $(ui.draggable[0])
               .css({
                 left: "auto",
                 top: "auto"
               })
 
-            if($(draggingElement).hasClass("bs-image")) {
+            if ($(draggingElement).hasClass("bs-image")) {
               newItem = getNewImagePlaceholderElement();
-            }
-            else if($(draggingElement).hasClass("bs-text")) {
+            } else if ($(draggingElement).hasClass("bs-text")) {
               newItem = getNewPlainTextElement();
-            }
-            else {
+            } else {
               newItem = getNewRunningTextElement();
             }
             $(that).append($(newItem));
@@ -182,6 +186,23 @@
 
       });
       return templateData;
+    }
+
+    var showMetaBox = function(el) {
+      $(that).append(getMetaBox(el));
+    }
+
+    var hideMetaBox = function() {
+      $("body").remove("#bs-element-metabox");
+    }
+
+    var getMetaBox = function(el) {
+      var metaBox = $('<div id="bs-element-metabox" contenteditable="plaintext-only">' + $(el).data("uuid") + '</div>');
+      metaBox.css({
+        top: $(el).position().top - 30,
+        left: $(that).css("left")
+      });
+      return metaBox;
     }
   };
 
