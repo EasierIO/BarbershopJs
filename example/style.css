@@ -28,6 +28,10 @@ a {
     color: #d4145a;
 }
 
+p:first-child {
+    margin-top: 0;
+}
+
 section.admin-side-bar {
     font-family: "Source Sans Pro";
     box-sizing: border-box;
@@ -76,6 +80,7 @@ section.admin-bottom-bar {
     margin: 0;
     padding: 10px;
     height: 40px;
+    z-index: 9;
 }
 
 button {
